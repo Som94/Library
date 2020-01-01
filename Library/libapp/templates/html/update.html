@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "html/base.html" %}
+{% block body_block %}
+
+<div class="container" align="center">
+  <h1>Insert Your Book To Online Library</h1>
+  <form method="post">
+
+
+    {% csrf_token %}
+
+    Rank No: <input type="text" name="rankno" value="{{book.rankno}}"><br>
+    Book Name: <input type="text" name="bname" value="{{book.bname}}"><br>
+    Book Author: <input type="text" name="author" value="{{book.author}}"><br>
+    Book Type: <input type="text" name="type" value="{{book.type}}"><br><br>
+
+    <input type="submit" class="btn btn-primary" value="Update">
+
+  </form>
+</div>
+
+{% endblock body_block %}

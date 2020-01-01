@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "html/base.html" %}
+{% block body_block %}
+
+<div class="container" align="center">
+  <h1>Login Here</h1>
+
+  <form method="post">
+
+    {{form.as_p}}
+    {% csrf_token %}
+
+    <input type="submit" class="btn btn-primary" value="Login">
+
+  </form>
+
+  <h2>If You are new user and Don't have an accounts then to Signup <a href="/signup" class="btn btn-primary">Click Here</a> </h2>
+</div>
+
+{% endblock body_block %}

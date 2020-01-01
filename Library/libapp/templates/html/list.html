@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends "html/base.html" %}
+{% block body_block %}
+
+<div class="container" align="center">
+<h1>All Library Books Information</h1>
+{% if list %}
+    <table>
+      <thead>
+        <th>Rank No.</th>
+        <th>Book Name</th>
+        <th>Book Author Name</th>
+        <th>Book Type</th>
+        <th colspan="2">Action</th>
+
+      </thead>
+
+      {% for b in list %}
+      <tr>
+        <td>{{b.rankno}}</td>
+        <td>{{b.bname}}</td>
+        <td>{{b.author}}</td>
+        <td>{{b.type}}</td>
+        <td> <a href="/update/{{b.id}}">Update</a> <a href="/delete/{{b.id}}"> delete</a> </td>
+
+      </tr>
+
+      {% endfor %}
+
+    </table><br><br>
+    <a href="/insert">Add Book</a>
+    {% else %}
+    <p>Sorry.. No Records Found...</p>
+{% endif %}
+
+
+</div>
+
+{% endblock body_block %}
